@@ -1,6 +1,6 @@
 # Assignment 7: Linux Virtualization 
 **Date:** 2025-02-19
-**Author:** Ajit G C (amk1005944@student.hamk.fi) 
+**Author:** Aayush shrestha  (amk1006019@student.hamk.fi) 
 
 ## Part 1: Virtualization Concepts
 
