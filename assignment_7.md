@@ -94,3 +94,64 @@ Lightweight, isolated environments that share the host OS kernel but have their 
 | **Architecture**     | Requires a full OS for each instance            | Shares the host OS kernel      |
 | **Resource Utilization** | Requires more resources                        | More lightweight and efficient   |
 | **Isolation**        | Provides strong isolation since each VM has its own OS | Provides a lower level of isolation, as it shares the host OS kernel |
+
+# Assingment 8 - Firewall
+
+## Step 1: Install and Enable iptables
+```
+sudo apt update && sudo apt install iptables -y
+```
+```
+sudo apt install iptables-persistent -y
+```
+** why**
+
+This ensures a clean start so that old rules don’t interfere with the new configuration.
+## Step 2: Create Firewall Rules
+
+Create a script file for setting up the firewall:
+```
+sudo nano /etc/firewall.sh 
+```
+### why 
+ a script instead of running commands manually?
+Automation & Consistency
+
+Running firewall rules manually means they are lost after a reboot.
+A script ensures the rules are applied automatically and consistently every time the system starts.
+
+
+*** then we need to paste the block of code ***
+
+## Step 3: Make the Script Executable
+```
+sudo chmod +x /etc/firewall.sh
+```
+## sudo chmod +x /etc/firewall.sh
+```
+sudo /etc/firewall.sh
+```
+## Step 5: Save Firewall Rules on Startup
+```
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
+```
+*** Aditionally we can use an alternative way to perform this task ***
+```
+echo "/etc/firewall.sh" | sudo tee -a /etc/rc.local
+sudo chmod +x /etc/rc.local
+```
+### Step 6: Verify the Firewall
+```
+sudo iptables -L -v -n
+```
+*** to cheak backlog ***
+```
+sudo tail -f /var/log/syslog
+```
+### why:
+Why is this command used?
+To check if the firewall rules are correctly applied.
+-to yte counts (helps in monitoring which rules are actively being used).
+
+![alt text](<Screenshot 2025-03-06 224100.png>) ![alt text](<Screenshot 2025-03-06 224109.png>) ![alt text](<Screenshot 2025-03-06 224120.png>)
