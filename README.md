@@ -35,3 +35,7 @@ output
 ![alt text](<Screenshot 2025-03-13 231926.png>)
 
 ## content of files are in Screenshot
+
+**you can acess it nby my git link i will add below to**
+
+- https://github.com/aaysuhdr/Linux-Management-/blob/main/README.md 
